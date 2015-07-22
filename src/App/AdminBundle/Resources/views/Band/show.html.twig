@@ -1,0 +1,51 @@
+{% extends 'AppAdminBundle::layout.html.twig' %}
+
+{% block content_title %}Band artist{% endblock %}
+
+{% block content -%}
+    <div class="panel-body">
+        <ul class="record_actions nav nav-pills">
+            <li>
+                <a href="{{ path('app_admin_band_index') }}">
+                    {{ 'back_to_list'|trans }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_admin_band_edit', { 'id': entity.id }) }}">
+                    {{ 'action.edit'|trans }}
+                </a>
+            </li>
+        </ul>
+
+        <table class="table record_properties">
+            <tbody>
+            <tr>
+                <th>{{ 'label.identifier'|trans }}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.name'|trans }}</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.formed_date'|trans }}</th>
+                <td>{{ entity.formedDate|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.description'|trans }}</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ entity.createdAt|date }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.updated_at'|trans }}</th>
+                <td>{{ entity.updatedAt|date }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        {{ form(delete_form) }}
+    </div>
+{% endblock %}

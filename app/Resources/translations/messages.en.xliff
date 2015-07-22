@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="label.login">
+                <source>label.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="label.password">
+                <source>label.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="action.login">
+                <source>action.login</source>
+                <target>login</target>
+            </trans-unit>
+            <trans-unit id="label.lastname">
+                <source>label.lastname</source>
+                <target>Lastname</target>
+            </trans-unit>
+            <trans-unit id="label.firstname">
+                <source>label.firstname</source>
+                <target>Firstname</target>
+            </trans-unit>
+            <trans-unit id="label.birthday">
+                <source>label.birthday</source>
+                <target>Birthday</target>
+            </trans-unit>
+            <trans-unit id="label.description">
+                <source>label.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="label.identifier">
+                <source>label.identifier</source>
+                <target>Identifier</target>
+            </trans-unit>
+            <trans-unit id="label.created_at">
+                <source>label.created_at</source>
+                <target>Created at</target>
+            </trans-unit>
+            <trans-unit id="label.updated_at">
+                <source>label.updated_at</source>
+                <target>Updated at</target>
+            </trans-unit>
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="label.formed_date">
+                <source>label.formed_date</source>
+                <target>Formed date</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label.duration">
+                <source>label.duration</source>
+                <target>Duration</target>
+            </trans-unit>
+            <trans-unit id="label.dailymotion_url">
+                <source>label.dailymotion_url</source>
+                <target>Dailymotion URL</target>
+            </trans-unit>
+            <trans-unit id="label.release_date">
+                <source>label.release_date</source>
+                <target>Release date</target>
+            </trans-unit>
+            <trans-unit id="label.performer">
+                <source>label.performer</source>
+                <target>Performer</target>
+            </trans-unit>
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>Show</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="action.update">
+                <source>action.update</source>
+                <target>Update</target>
+            </trans-unit>
+            <trans-unit id="action.create">
+                <source>action.create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="back_to_list">
+                <source>back_to_list</source>
+                <target>Back to list</target>
+            </trans-unit>
+            <trans-unit id="create_new_entry">
+                <source>create_new_entry</source>
+                <target>Create a new entry</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

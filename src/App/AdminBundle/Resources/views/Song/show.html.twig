@@ -1,0 +1,57 @@
+{% extends 'AppAdminBundle::layout.html.twig' %}
+
+{% block content_title %}Song{% endblock %}
+
+{% block content -%}
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('app_admin_song_index') }}">
+                {{ 'back_to_list'|trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('app_admin_song_edit', { 'id': entity.id }) }}">
+                {{ 'action.edit'|trans }}
+            </a>
+        </li>
+    </ul>
+
+    <table class="table record_properties">
+        <tbody>
+            <tr>
+                <th>{{ 'label.identifier'|trans }}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.title'|trans }}</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.duration'|trans }}</th>
+                <td>{{ entity.duration }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.dailymotion_url'|trans }}</th>
+                <td>{% if entity.dailymotionUrl is not null %}<a href="{{ entity.dailymotionUrl }}">{{ entity.dailymotionUrl }}</a>{% else %}N.A{% endif %}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.release_date'|trans }}</th>
+                <td>{{ entity.releaseDate|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.performer'|trans }}</th>
+                <td>{{ entity.performer }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ entity.createdAt|date }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.updated_at'|trans }}</th>
+                <td>{{ entity.updatedAt|date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ form(delete_form) }}
+{% endblock %}

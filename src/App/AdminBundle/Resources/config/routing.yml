@@ -1,0 +1,26 @@
+app_admin_homepage:
+    path:     /
+    defaults: { _controller: AppAdminBundle:Default:index }
+
+#security routes
+app_admin_login:
+    path:     /login
+    defaults: { _controller: AppAdminBundle:Security:login }
+app_admin_login_check:
+    path:     /login_check
+app_admin_logout:
+    path:     /logout
+
+#crud routes
+app_admin_single_crud:
+    resource: "@AppAdminBundle/Controller/SingleController.php"
+    type:     "annotation"
+    prefix:   "/artists/singles"
+app_admin_band_crud:
+    resource: "@AppAdminBundle/Controller/BandController.php"
+    type:     "annotation"
+    prefix:   "/artists/bands"
+app_admin_song_crud:
+    resource: "@AppAdminBundle/Controller/SongController.php"
+    type:     "annotation"
+    prefix:   "/songs"

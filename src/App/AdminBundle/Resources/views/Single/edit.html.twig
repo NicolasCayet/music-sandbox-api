@@ -1,0 +1,19 @@
+{% extends 'AppAdminBundle::layout.html.twig' %}
+
+{% block content_title %}Single artist edit{% endblock %}
+
+{% block content -%}
+<div class="panel-body">
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('app_admin_single_index') }}">
+                {{ 'back_to_list'|trans }}
+            </a>
+        </li>
+    </ul>
+
+    {{ form(edit_form) }}
+
+    {{ form(delete_form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'AppAdminBundle::layout.html.twig' %}
+
+{% block content_title %}Single artists list{% endblock %}
+
+{% block content -%}
+<div class="panel-body">
+    <ul class="nav nav-pills">
+        <li>
+            <a href="{{ path('app_admin_single_new') }}">
+                {{ 'create_new_entry'|trans }}
+            </a>
+        </li>
+    </ul>
+    <div class="dataTable_wrapper">
+        <table class="table table-striped table-bordered table-hover records_list">
+            <thead>
+                <tr>
+                    <th>{{ 'label.identifier'|trans }}</th>
+                    <th>{{ 'label.firstname'|trans }}</th>
+                    <th>{{ 'label.lastname'|trans }}</th>
+                    <th>{{ 'label.birthday'|trans }}</th>
+                    <th>{{ 'label.created_at'|trans }}</th>
+                    <th>{{ 'label.updated_at'|trans }}</th>
+                    <th>{{ 'label.actions'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
+                    <td>{{ entity.id }}</td>
+                    <td>{{ entity.firstname }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.birthday|date('d/m/Y') }}</td>
+                    <td>{{ entity.createdAt|date }}</td>
+                    <td>{{ entity.updatedAt|date }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('app_admin_single_show', { 'id': entity.id }) }}">{{ 'action.show'|trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_admin_single_edit', { 'id': entity.id }) }}">{{ 'action.edit'|trans }}</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
