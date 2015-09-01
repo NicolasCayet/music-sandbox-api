@@ -70,9 +70,9 @@
                 <source>label.release_date</source>
                 <target>Release date</target>
             </trans-unit>
-            <trans-unit id="label.performer">
-                <source>label.performer</source>
-                <target>Performer</target>
+            <trans-unit id="label.performers">
+                <source>label.performers</source>
+                <target>Performer(s)</target>
             </trans-unit>
             <trans-unit id="label.members">
                 <source>label.members</source>

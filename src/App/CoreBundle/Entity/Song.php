@@ -2,6 +2,7 @@
 
 namespace App\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -61,11 +62,12 @@ class Song {
      */
     protected $updatedAt;
     /**
-     * @var Artist $performer
+     * @var ArrayCollection $performers
      *
-     * @ORM\ManyToOne(targetEntity="Artist", inversedBy="songs")
+     * @ORM\ManyToMany(targetEntity="Artist", inversedBy="songs")
+     * @ORM\JoinTable(name="artists_performers")
      */
-    protected $performer;
+    protected $performers;
     /**
      * @var Album $album
      *
@@ -170,20 +172,20 @@ class Song {
     }
 
     /**
-     * @return Artist
+     * @return ArrayCollection
      */
-    public function getPerformer()
+    public function getPerformers()
     {
-        return $this->performer;
+        return $this->performers;
     }
 
     /**
      * @param Artist $performer
      */
-    public function setPerformer(Artist $performer)
+    public function addPerformer(Artist $performer)
     {
         $performer->addSong($this);
-        $this->performer = $performer;
+        $this->performers->add($performer);
     }
 
     /**

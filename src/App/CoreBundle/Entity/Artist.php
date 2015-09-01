@@ -57,7 +57,7 @@ abstract class Artist {
     /**
      * @var ArrayCollection $songs
      *
-     * @ORM\OneToMany(targetEntity="Song", mappedBy="performer", cascade={"remove"})
+     * @ORM\ManyToMany(targetEntity="Song", mappedBy="performers")
      */
     protected $songs;
     /**

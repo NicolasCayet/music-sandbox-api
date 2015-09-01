@@ -39,8 +39,14 @@
                 <td>{{ entity.releaseDate|date('d/m/Y') }}</td>
             </tr>
             <tr>
-                <th>{{ 'label.performer'|trans }}</th>
-                <td>{{ entity.performer }}</td>
+                <th>{{ 'choice.label.artists_who_realized'|transchoice(entity.performers|length) }}</th>
+                <td>
+                    <ul>
+                        {% for artist in entity.performers %}
+                            <li>{{ artist }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <th>{{ 'label.created_at'|trans }}</th>

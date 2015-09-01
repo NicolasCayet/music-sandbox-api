@@ -21,7 +21,7 @@ class SongType extends AbstractType
                 'years' => range(date('Y'), 1950),
                 'label' => 'label.release_date'
             ))
-            ->add('performer', null, array('label' => 'label.performer'))
+            ->add('performers', null, array('label' => 'label.performers'))
             ->add('album', null, array('label' => 'label.album'))
         ;
     }

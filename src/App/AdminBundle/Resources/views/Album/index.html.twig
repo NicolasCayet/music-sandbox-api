@@ -19,6 +19,7 @@
                 <th>{{ 'label.title'|trans }}</th>
                 <th>{{ 'label.duration'|trans }}</th>
                 <th>{{ 'label.release_date'|trans }}</th>
+                <th>{{ 'label.artists'|trans }}</th>
                 <th>{{ 'label.songs'|trans }}</th>
                 <th>{{ 'label.created_at'|trans }}</th>
                 <th>{{ 'label.updated_at'|trans }}</th>
@@ -32,6 +33,17 @@
                 <td>{{ entity.title }}</td>
                 <td>{{ 'pretty_duration_in_sec'|trans({'%duration%' : entity.duration}) }}</td>
                 <td>{% if entity.releaseDate %}{{ entity.releaseDate|date('d/m/Y') }}{% endif %}</td>
+                <td>
+                    {% if entity.artists|length > 1 %}
+                        <ul>
+                            {% for artist in entity.artists %}
+                                <li>{{ artist }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        {{ entity.artists|first|default("") }}
+                    {% endif %}
+                </td>
                 <td>{{ 'count.songs'|transchoice(entity.songs|length, {'%count%' : entity.songs|length}) }}</td>
                 <td>{{ entity.createdAt|date }}</td>
                 <td>{{ entity.updatedAt|date }}</td>
