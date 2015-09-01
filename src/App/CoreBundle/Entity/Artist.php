@@ -118,6 +118,22 @@ abstract class Artist {
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getSongs()
+    {
+        return $this->songs;
+    }
+
+    /**
+     * @param Song $song
+     */
+    public function addSong(Song $song)
+    {
+        $this->songs->add($song);
+    }
+
+    /**
      * @return string
      */
     public function __toString()

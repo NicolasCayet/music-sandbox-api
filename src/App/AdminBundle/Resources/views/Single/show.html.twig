@@ -47,6 +47,16 @@
                 <th>{{ 'label.updated_at'|trans }}</th>
                 <td>{{ entity.updatedAt|date }}</td>
             </tr>
+            <tr>
+                <th>{{ 'choice.label.member_in_bands'|transchoice(entity.bands|length) }}</th>
+                <td>
+                    <ul>
+                        {% for band in entity.bands %}
+                            <li>{{ band.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 

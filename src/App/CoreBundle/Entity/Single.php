@@ -2,6 +2,7 @@
 
 namespace App\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +25,17 @@ class Single extends Artist {
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $firstname;
+    /**
+     * @var ArrayCollection $bands Band(s) the artist is member of
+     *
+     * @ORM\ManyToMany(targetEntity="Band", mappedBy="members")
+     */
+    protected $bands;
+
+    public function __construct()
+    {
+        $this->bands = new ArrayCollection();
+    }
 
     /**
      * @return \DateTime
@@ -42,6 +54,14 @@ class Single extends Artist {
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getBands()
+    {
+        return $this->bands;
+    }
+
+    /**
      * @param \DateTime $birthday
      */
     public function setBirthday($birthday)
@@ -55,6 +75,17 @@ class Single extends Artist {
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+    }
+
+    /**
+     * Add a band to the single artist (reverse side of the association)
+     *
+     * @param Band $band
+     * @internal
+     */
+    public function addBand(Band $band)
+    {
+        $this->bands->add($band);
     }
 
     /**

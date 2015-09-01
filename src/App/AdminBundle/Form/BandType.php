@@ -18,7 +18,8 @@ class BandType extends AbstractType
             ->add('formedDate', 'birthday', array(
                 'label' => 'label.formed_date',
                 'years' => range(date('Y'), 1950)
-            ));
+            ))
+            ->add('members', null, array('label' => 'label.members'));
     }
     
     /**

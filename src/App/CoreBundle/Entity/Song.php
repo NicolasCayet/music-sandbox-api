@@ -168,6 +168,7 @@ class Song {
      */
     public function setPerformer(Artist $performer)
     {
+        $performer->addSong($this);
         $this->performer = $performer;
     }
 

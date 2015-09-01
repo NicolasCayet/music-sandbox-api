@@ -74,6 +74,14 @@
                 <source>label.performer</source>
                 <target>Performer</target>
             </trans-unit>
+            <trans-unit id="label.members">
+                <source>label.members</source>
+                <target>Member(s)</target>
+            </trans-unit>
+            <trans-unit id="choice.label.member_in_bands">
+                <source>choice.label.member_in_bands</source>
+                <target>{0,1}Member in band|]1,Inf]Member in bands</target>
+            </trans-unit>
             <trans-unit id="action.show">
                 <source>action.show</source>
                 <target>Show</target>

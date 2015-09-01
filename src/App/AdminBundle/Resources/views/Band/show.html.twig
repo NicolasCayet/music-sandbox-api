@@ -43,6 +43,16 @@
                 <th>{{ 'label.updated_at'|trans }}</th>
                 <td>{{ entity.updatedAt|date }}</td>
             </tr>
+            <tr>
+                <th>{{ 'label.members'|trans }}</th>
+                <td>
+                    <ul>
+                        {% for member in entity.members %}
+                            <li>{{ member.firstname }} {{ member.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
             </tbody>
         </table>
 
