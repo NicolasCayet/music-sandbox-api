@@ -60,6 +60,12 @@ abstract class Artist {
      * @ORM\OneToMany(targetEntity="Song", mappedBy="performer", cascade={"remove"})
      */
     protected $songs;
+    /**
+     * @var ArrayCollection $albums
+     *
+     * @ORM\ManyToMany(targetEntity="Album", mappedBy="artists")
+     */
+    protected $albums;
 
     /**
      * @return int
@@ -102,6 +108,14 @@ abstract class Artist {
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getAlbums()
+    {
+        return $this->albums;
+    }
+
+    /**
      * @param string $description
      */
     public function setDescription($description)
@@ -131,6 +145,17 @@ abstract class Artist {
     public function addSong(Song $song)
     {
         $this->songs->add($song);
+    }
+
+    /**
+     * Add an album to the artist (reverse side of the association)
+     *
+     * @param Album $album
+     * @internal
+     */
+    public function addAlbum(Album $album)
+    {
+        $this->albums->add($album);
     }
 
     /**

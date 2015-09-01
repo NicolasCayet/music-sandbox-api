@@ -24,3 +24,7 @@ app_admin_song_crud:
     resource: "@AppAdminBundle/Controller/SongController.php"
     type:     "annotation"
     prefix:   "/songs"
+app_admin_album_crud:
+    resource: "@AppAdminBundle/Controller/AlbumController.php"
+    type:     "annotation"
+    prefix:   "/albums"

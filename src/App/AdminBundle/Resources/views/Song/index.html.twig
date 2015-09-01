@@ -31,7 +31,7 @@
             <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
                 <td>{{ entity.id }}</td>
                 <td>{{ entity.title }}</td>
-                <td>{{ entity.duration }}</td>
+                <td>{{ 'pretty_duration_in_sec'|trans({'%duration%' : entity.duration}) }}</td>
                 <td>{% if entity.dailymotionUrl is not null %}<a href="{{ entity.dailymotionUrl }}">{{ entity.dailymotionUrl }}</a>{% else %}N.A{% endif %}</td>
                 <td>{% if entity.releaseDate %}{{ entity.releaseDate|date('d/m/Y') }}{% endif %}</td>
                 <td>{{ entity.performer }}</td>

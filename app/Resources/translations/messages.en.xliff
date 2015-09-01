@@ -82,6 +82,26 @@
                 <source>choice.label.member_in_bands</source>
                 <target>{0,1}Member in band|]1,Inf]Member in bands</target>
             </trans-unit>
+            <trans-unit id="label.songs">
+                <source>label.songs</source>
+                <target>Song(s)</target>
+            </trans-unit>
+            <trans-unit id="choice.label.songs">
+                <source>choice.label.songs</source>
+                <target>{0,1}Song|]1,Inf]Songs</target>
+            </trans-unit>
+            <trans-unit id="label.artists">
+                <source>label.artists</source>
+                <target>Artist(s)</target>
+            </trans-unit>
+            <trans-unit id="choice.label.artists_who_realized">
+                <source>choice.label.artists_who_realized</source>
+                <target>{0,1}Artist who realized|]1,Inf]Artists who realized</target>
+            </trans-unit>
+            <trans-unit id="label.album">
+                <source>label.album</source>
+                <target>Album</target>
+            </trans-unit>
             <trans-unit id="action.show">
                 <source>action.show</source>
                 <target>Show</target>
@@ -109,6 +129,13 @@
             <trans-unit id="create_new_entry">
                 <source>create_new_entry</source>
                 <target>Create a new entry</target>
+            </trans-unit><trans-unit id="pretty_duration_in_sec">
+                <source>pretty_duration_in_sec</source>
+                <target>%duration%sec.</target>
+            </trans-unit>
+            <trans-unit id="count.songs">
+                <source>count.songs</source>
+                <target>{0,1}%count% song|]1,Inf]%count% songs</target>
             </trans-unit>
         </body>
     </file>

@@ -66,6 +66,12 @@ class Song {
      * @ORM\ManyToOne(targetEntity="Artist", inversedBy="songs")
      */
     protected $performer;
+    /**
+     * @var Album $album
+     *
+     * @ORM\ManyToOne(targetEntity="Album", inversedBy="songs")
+     */
+    protected $album;
 
     /**
      * @return int
@@ -124,6 +130,14 @@ class Song {
     }
 
     /**
+     * @return Album
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
+
+    /**
      * @param string $title
      */
     public function setTitle($title)
@@ -172,4 +186,20 @@ class Song {
         $this->performer = $performer;
     }
 
+    /**
+     * @param Album $album
+     */
+    public function setAlbum(Album $album)
+    {
+        $album->addSong($this);
+        $this->album = $album;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }

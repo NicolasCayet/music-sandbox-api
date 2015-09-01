@@ -22,6 +22,7 @@ class SongType extends AbstractType
                 'label' => 'label.release_date'
             ))
             ->add('performer', null, array('label' => 'label.performer'))
+            ->add('album', null, array('label' => 'label.album'))
         ;
     }
     
