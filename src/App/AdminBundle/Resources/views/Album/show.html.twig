@@ -1,0 +1,69 @@
+{% extends 'AppAdminBundle::layout.html.twig' %}
+
+{% block content_title %}Album{% endblock %}
+
+{% block content -%}
+    <ul class="record_actions nav nav-pills">
+        <li>
+            <a href="{{ path('app_admin_album_index') }}">
+                {{ 'back_to_list'|trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('app_admin_album_edit', { 'id': entity.id }) }}">
+                {{ 'action.edit'|trans }}
+            </a>
+        </li>
+    </ul>
+
+    <table class="table record_properties">
+        <tbody>
+            <tr>
+                <th>{{ 'label.identifier'|trans }}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.title'|trans }}</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.duration'|trans }}</th>
+                <td>{{ 'pretty_duration_in_sec'|trans({'%duration%' : entity.duration}) }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.release_date'|trans }}</th>
+                <td>{{ entity.releaseDate|date('d/m/Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ entity.createdAt|date }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.updated_at'|trans }}</th>
+                <td>{{ entity.updatedAt|date }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'choice.label.artists_who_realized'|transchoice(entity.artists|length) }}</th>
+                <td>
+                    <ul>
+                        {% for artist in entity.artists %}
+                            <li>{{ artist }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'choice.label.songs'|transchoice(entity.songs|length) }}</th>
+                <td>
+                    <ul>
+                        {% for song in entity.songs %}
+                            <li>{{ song }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ form(delete_form) }}
+{% endblock %}
