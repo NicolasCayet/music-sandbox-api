@@ -1,0 +1,13 @@
+App\CoreBundle\Entity\Single:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+        firstname:
+            expose: true
+        description:
+            expose: true
+        birthday:
+            expose: true

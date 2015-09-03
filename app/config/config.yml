@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: doctrine_extensions.yml }
+    - { resource: "@AppRestBundle/Resources/config/config.yml" }
 
 framework:
     #esi:             ~

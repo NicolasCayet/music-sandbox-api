@@ -1,0 +1,4 @@
+artists:
+    type: rest
+    resource: "@AppRestBundle/Controller/ArtistController.php"
+    name_prefix: api_

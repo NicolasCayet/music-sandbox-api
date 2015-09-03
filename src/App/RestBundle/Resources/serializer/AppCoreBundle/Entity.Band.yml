@@ -1,0 +1,13 @@
+App\CoreBundle\Entity\Band:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        name:
+            expose: true
+        description:
+            expose: true
+        formed_date:
+            expose: true
+        members:
+            expose: true
