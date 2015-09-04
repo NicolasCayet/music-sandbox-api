@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @package App\CoreBundle\Entity
  *
+ * @ORM\Table(name="artists_single")
  * @ORM\Entity
  */
 class Single extends Artist {

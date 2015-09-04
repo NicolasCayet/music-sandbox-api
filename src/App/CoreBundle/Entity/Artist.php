@@ -57,7 +57,7 @@ abstract class Artist {
     /**
      * @var ArrayCollection $songs
      *
-     * @ORM\ManyToMany(targetEntity="Song", mappedBy="performers")
+     * @ORM\ManyToMany(targetEntity="Song", mappedBy="artists")
      */
     protected $songs;
     /**
@@ -116,6 +116,14 @@ abstract class Artist {
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getSongs()
+    {
+        return $this->songs;
+    }
+
+    /**
      * @param string $description
      */
     public function setDescription($description)
@@ -129,14 +137,6 @@ abstract class Artist {
     public function setName($name)
     {
         $this->name = $name;
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getSongs()
-    {
-        return $this->songs;
     }
 
     /**

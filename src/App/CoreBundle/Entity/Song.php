@@ -62,12 +62,12 @@ class Song {
      */
     protected $updatedAt;
     /**
-     * @var ArrayCollection $performers
+     * @var ArrayCollection $artists
      *
      * @ORM\ManyToMany(targetEntity="Artist", inversedBy="songs")
-     * @ORM\JoinTable(name="artists_performers")
+     * @ORM\JoinTable(name="artists_songs")
      */
-    protected $performers;
+    protected $artists;
     /**
      * @var Album $album
      *
@@ -174,18 +174,18 @@ class Song {
     /**
      * @return ArrayCollection
      */
-    public function getPerformers()
+    public function getArtists()
     {
-        return $this->performers;
+        return $this->artists;
     }
 
     /**
-     * @param Artist $performer
+     * @param Artist $artist
      */
-    public function addPerformer(Artist $performer)
+    public function addArtist(Artist $artist)
     {
-        $performer->addSong($this);
-        $this->performers->add($performer);
+        $artist->addSong($this);
+        $this->artists->add($artist);
     }
 
     /**

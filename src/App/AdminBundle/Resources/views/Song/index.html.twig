@@ -20,7 +20,7 @@
                 <th>{{ 'label.duration'|trans }}</th>
                 <th>{{ 'label.dailymotion_url'|trans }}</th>
                 <th>{{ 'label.release_date'|trans }}</th>
-                <th>{{ 'label.performers'|trans }}</th>
+                <th>{{ 'label.artists'|trans }}</th>
                 <th>{{ 'label.created_at'|trans }}</th>
                 <th>{{ 'label.updated_at'|trans }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
@@ -35,14 +35,14 @@
                 <td>{% if entity.dailymotionUrl is not null %}<a href="{{ entity.dailymotionUrl }}">{{ entity.dailymotionUrl }}</a>{% else %}N.A{% endif %}</td>
                 <td>{% if entity.releaseDate %}{{ entity.releaseDate|date('d/m/Y') }}{% endif %}</td>
                 <td>
-                    {% if entity.performers|length > 1 %}
+                    {% if entity.artists|length > 1 %}
                         <ul>
-                            {% for artist in entity.performers %}
+                            {% for artist in entity.artists %}
                                 <li>{{ artist }}</li>
                             {% endfor %}
                         </ul>
                     {% else %}
-                        {{ entity.performers|first|default("") }}
+                        {{ entity.artists|first|default("") }}
                     {% endif %}
                 </td>
                 <td>{{ entity.createdAt|date }}</td>
