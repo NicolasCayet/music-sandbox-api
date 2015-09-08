@@ -1,9 +1,11 @@
 App\CoreBundle\Entity\Single:
     exclusion_policy: ALL
+    virtual_properties:
+        getName:
+            serialized_name: name
+            type: string
     properties:
         id:
-            expose: true
-        name:
             expose: true
         description:
             expose: true
