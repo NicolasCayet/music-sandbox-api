@@ -1,0 +1,19 @@
+App\CoreBundle\Entity\Album:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        title:
+            expose: true
+        duration:
+            expose: true
+            groups: [Album_details]
+        releaseDate:
+            expose: true
+            groups: [Album_details]
+        artists:
+            expose: true
+            groups: [Album_details]
+        songs:
+            expose: true
+            groups: [Album_details]

@@ -5,9 +5,15 @@ App\CoreBundle\Entity\Single:
             expose: true
         name:
             expose: true
-        firstname:
-            expose: true
         description:
             expose: true
+            groups: [Common_artist_details]
+        firstname:
+            expose: true
+            groups: [Single_artist_details]
         birthday:
             expose: true
+            groups: [Single_artist_details]
+        bands:
+            expose: true
+            groups: [Single_artist_details]

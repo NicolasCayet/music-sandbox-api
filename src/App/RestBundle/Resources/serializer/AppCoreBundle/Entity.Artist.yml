@@ -5,5 +5,8 @@ App\CoreBundle\Entity\Artist:
             expose: true
         name:
             expose: true
+        type:
+            expose: true
         description:
             expose: true
+            groups: [Common_artist_details]

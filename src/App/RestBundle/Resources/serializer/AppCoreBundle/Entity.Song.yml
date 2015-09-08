@@ -1,0 +1,21 @@
+App\CoreBundle\Entity\Song:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        title:
+            expose: true
+        dailymotionUrl:
+            expose: true
+        duration:
+            expose: true
+            groups: [Song_details]
+        releaseDate:
+            expose: true
+            groups: [Song_details]
+        album:
+            expose: true
+            groups: [Song_details]
+        artists:
+            expose: true
+            groups: [Song_details]
