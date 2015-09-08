@@ -15,7 +15,12 @@ class SingleType extends AbstractType
     {
         $builder
             ->add('firstname', null, array('label' => 'label.firstname'))
-            ->add('name', null, array('label' => 'label.lastname'))
+            ->add('lastname', null, array('label' => 'label.lastname'))
+            ->add('name', null, array(
+                'label' => 'label.name_for_single',
+                'required' => false,
+                'data' =>  $options['data'] ? $options['data']->getName(false) : ''
+            ))
             ->add('birthday', 'birthday', array(
                 'label' => 'label.birthday', 'years' => range(date('Y'), 1950)
             ))

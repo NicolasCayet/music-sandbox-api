@@ -27,6 +27,12 @@ class Single extends Artist {
      */
     protected $firstname;
     /**
+     * @var string $lastname
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    protected $lastname;
+    /**
      * @var ArrayCollection $bands Band(s) the artist is member of
      *
      * @ORM\ManyToMany(targetEntity="Band", mappedBy="members")
@@ -39,6 +45,16 @@ class Single extends Artist {
     }
 
     /**
+     * @param boolean $allowCalculated Whether the calculated version should be returned if no value specified for name
+     * @return string
+     */
+    public function getName($allowCalculated = true)
+    {
+        return parent::getName() || !$allowCalculated ?
+            parent::getName() :
+            $this->getFirstname().' '.$this->getLastname();
+    }
+    /**
      * @return \DateTime
      */
     public function getBirthday()
@@ -47,11 +63,18 @@ class Single extends Artist {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFirstname()
     {
         return $this->firstname;
+    }
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
     }
 
     /**
@@ -71,11 +94,19 @@ class Single extends Artist {
     }
 
     /**
-     * @param mixed $firstname
+     * @param string $firstname
      */
     public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
     }
 
     /**

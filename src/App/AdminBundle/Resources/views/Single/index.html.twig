@@ -16,8 +16,7 @@
             <thead>
                 <tr>
                     <th>{{ 'label.identifier'|trans }}</th>
-                    <th>{{ 'label.firstname'|trans }}</th>
-                    <th>{{ 'label.lastname'|trans }}</th>
+                    <th>{{ 'label.name'|trans }}</th>
                     <th>{{ 'label.birthday'|trans }}</th>
                     <th>{{ 'label.created_at'|trans }}</th>
                     <th>{{ 'label.updated_at'|trans }}</th>
@@ -28,7 +27,6 @@
             {% for entity in entities %}
                 <tr class="{{ cycle(['odd', 'even'], loop.index0) }}">
                     <td>{{ entity.id }}</td>
-                    <td>{{ entity.firstname }}</td>
                     <td>{{ entity.name }}</td>
                     <td>{{ entity.birthday|date('d/m/Y') }}</td>
                     <td>{{ entity.createdAt|date }}</td>

@@ -11,6 +11,9 @@ App\CoreBundle\Entity\Single:
         firstname:
             expose: true
             groups: [Single_artist_details]
+        lastname:
+            expose: true
+            groups: [Single_artist_details]
         birthday:
             expose: true
             groups: [Single_artist_details]

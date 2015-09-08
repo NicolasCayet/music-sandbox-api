@@ -22,6 +22,10 @@
                 <source>label.firstname</source>
                 <target>Firstname</target>
             </trans-unit>
+            <trans-unit id="label.name_for_single">
+                <source>label.name_for_single</source>
+                <target>Nickname (leave empty if no specific nickname)</target>
+            </trans-unit>
             <trans-unit id="label.birthday">
                 <source>label.birthday</source>
                 <target>Birthday</target>
