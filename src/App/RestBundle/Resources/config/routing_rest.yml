@@ -1,0 +1,10 @@
+artists:
+    type: rest
+    resource: "@AppRestBundle/Controller/ArtistController.php"
+    name_prefix: api_
+
+songs:
+    type: rest
+    parent: artists
+    resource: "@AppRestBundle/Controller/ArtistChildrenController.php"
+    name_prefix: api_

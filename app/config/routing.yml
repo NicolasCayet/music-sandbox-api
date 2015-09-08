@@ -7,5 +7,4 @@ app_admin:
 
 app_rest:
     resource: "@AppRestBundle/Resources/config/routing.yml"
-    type:     rest
     prefix:   /api

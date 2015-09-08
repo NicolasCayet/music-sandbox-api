@@ -1,10 +1,7 @@
-artists:
-    type: rest
-    resource: "@AppRestBundle/Controller/ArtistController.php"
-    name_prefix: api_
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix: doc
 
-songs:
+app_rest_services:
+    resource: "@AppRestBundle/Resources/config/routing_rest.yml"
     type: rest
-    parent: artists
-    resource: "@AppRestBundle/Controller/ArtistChildrenController.php"
-    name_prefix: api_
