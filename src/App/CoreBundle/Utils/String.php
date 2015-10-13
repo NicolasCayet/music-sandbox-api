@@ -5,6 +5,8 @@ namespace App\CoreBundle\Utils;
 /**
  * This class is used as service to provide helpful methods about string manipulation
  *
+ * Also expose static function to be used everywhere in the app
+ *
  * @package App\CoreBundle\Utils
  */
 class String {
@@ -15,7 +17,7 @@ class String {
      *
      * @return string
      */
-    public function getShortClassName($className)
+    public static function getShortClassName($className)
     {
         $path = explode('\\', $className);
 

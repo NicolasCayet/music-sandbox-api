@@ -2,6 +2,7 @@
 
 namespace App\CoreBundle\Entity;
 
+use App\CoreBundle\Utils\String;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -163,8 +164,6 @@ abstract class Artist {
      */
     public function __toString()
     {
-        $className = explode('\\', get_class($this));
-
-        return "{$this->getName()} (".array_pop($className).")";
+        return "{$this->getName()} (".String::getShortClassName(get_class($this)).")";
     }
 }
